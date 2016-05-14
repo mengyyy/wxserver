@@ -13,10 +13,7 @@ public class TextHandler extends BaseHandler {
 	@Override
 	public String doHandleMsg(MsgRequest msgRequest) {
 		try {
-			
-			getResponseStringByContent("TextHandler.java",msgRequest);
 			return getResponseStringByContent(TulingUtil.getContentStr(null==msgRequest.getContent()?msgRequest.getRecognition():msgRequest.getContent(), msgRequest.getFromUserName()),msgRequest);
-			
 		} catch (IOException e) {
 			return getResponseStringByContent("TextHandler.java ——IOException ",msgRequest);
 		}
