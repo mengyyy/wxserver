@@ -13,10 +13,9 @@ public class TextHandler extends BaseHandler {
 	@Override
 	public String doHandleMsg(MsgRequest msgRequest) {
 		try {
-			return getResponseStringByContent(TulingUtil.getContentStr(null==msgRequest.getContent()?msgRequest.getRecognition():msgRequest.getContent(), msgRequest.getFromUserName()),msgRequest);
-			//return getResponseStringByContent("TextHandler ",msgRequest);
+			return getResponseStringByContent("TextHandler.java",msgRequest);
 		} catch (IOException e) {
-			return getResponseStringByContent("TextHandler.java IOException错 ",msgRequest);
+			return getResponseStringByContent(TulingUtil.getContentStr(null==msgRequest.getContent()?msgRequest.getRecognition():msgRequest.getContent(), msgRequest.getFromUserName()),msgRequest);
 		}
 
 	}
