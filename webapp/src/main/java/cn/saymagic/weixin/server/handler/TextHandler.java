@@ -12,12 +12,7 @@ public class TextHandler extends BaseHandler {
 
 	@Override
 	public String doHandleMsg(MsgRequest msgRequest) {
-		try {
 			return getResponseStringByContent("TextHandler.java ——IOException ",msgRequest);
-		} catch (IOException e) {
-			return getResponseStringByContent("TextHandler.java ——IOException ",msgRequest);
-		}
-
 	}
 
 }
