@@ -37,7 +37,7 @@
 
 ![](http://cdn.saymagic.cn/o_19uc63k641h0t1b7j1u2t16vn674e.png)
 
-`WxApiServlet`是处理请求的实现类，它会将微信服务器发来的Post请求封装成 `MsgRequest`对象，然后根据`MsgRequest`类型的不同(语音、文字、图片)来生成不同类型的handler，这里我只做了Event（需要自行修改新用户关注触发事件提示信息）与Text类型的处理类，添加其它类型的处理需要继承`BaseHandler`，实现里面的`doHandleMsg`方法。这里需要注意两点，第一点是我将普通的文字与语音请求通过图灵机器人进行回复，因此你需要去[图灵机器人](http://www.tuling123.com/web/robot_access!index.action?cur=l_05)申请apikey：
+`WxApiServlet`是处理请求的实现类，它会将微信服务器发来的Post请求封装成 `MsgRequest`对象，然后根据`MsgRequest`类型的不同(语音、文字、图片)来生成不同类型的handler，这里我只做了[Event](https://github.com/mengyyy/wxserver/blob/master/webapp/src/main/java/cn/saymagic/weixin/server/handler/EventHandler.java)（需要自行修改新用户关注触发事件提示信息)与[Text](https://github.com/mengyyy/wxserver/blob/master/webapp/src/main/java/cn/saymagic/weixin/server/handler/TextHandler.java)类型的处理类，添加其它类型的处理需要继承`BaseHandler`，实现里面的`doHandleMsg`方法。这里需要注意两点，第一点是我将普通的文字与语音请求通过图灵机器人进行回复，因此你需要去[图灵机器人](http://www.tuling123.com/web/robot_access!index.action?cur=l_05)申请apikey：
 
 ![](http://cdn.saymagic.cn/o_19uc6geo1pgco0n1tj22no467o.png)
 
